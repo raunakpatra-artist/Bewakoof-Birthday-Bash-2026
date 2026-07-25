@@ -176,8 +176,8 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 
 /* --- HERO -------------------------------------------------- */
 .hero{position:relative;min-height:clamp(560px,64vw,820px);display:flex;align-items:flex-end;overflow:hidden;background:var(--ink)}
-.hero__bg{position:absolute;inset:0;background:url('images/1920x1080-bewakoof-red1.jpg') 65% 22%/cover}
-.hero__sc{position:absolute;inset:0;background:linear-gradient(96deg,rgba(10,10,10,.94) 0%,rgba(10,10,10,.78) 26%,rgba(10,10,10,.32) 52%,rgba(10,10,10,.1) 78%)}
+.hero__bg{position:absolute;inset:0;background:url('images/hero-birthday-bash.jpg') center/cover}
+.hero__sc{position:absolute;inset:0;background:linear-gradient(96deg,rgba(10,10,10,.85) 0%,rgba(10,10,10,.55) 26%,rgba(10,10,10,.15) 48%,rgba(10,10,10,0) 62%)}
 .hero__in{position:relative;padding:var(--pad);padding-bottom:clamp(32px,4vw,56px);color:var(--off);width:100%;max-width:1680px;margin:0 auto;z-index:2}
 .hero__badge{display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:var(--ink);padding:6px 14px;font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px;animation:float 3s ease-in-out infinite;font-weight:700}
 .hero__badge .oo{width:26px;color:var(--maroon)}
@@ -192,15 +192,18 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .cdown__n{font-family:var(--f-display);font-size:clamp(26px,2.8vw,42px);color:var(--yellow);line-height:1}
 .cdown__l{font-family:var(--f-mono);font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:rgba(247,244,237,.5);margin-top:4px}
 
-/* --- CATEGORY CHIPS (redesigned with OO branding) --------- */
+/* --- CATEGORY CHIPS (with product thumbnails) ------------- */
 .chips{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--hair-l);border:1px solid var(--hair-l)}
-.chip{background:var(--off);padding:22px 18px 18px;display:flex;flex-direction:column;gap:10px;min-height:150px;justify-content:space-between;transition:background .25s,transform .2s;position:relative;overflow:hidden}
+.chip{background:var(--off);padding:0;display:grid;grid-template-columns:1fr 84px;min-height:170px;transition:background .25s,transform .2s;position:relative;overflow:hidden}
 .chip:hover{background:var(--off-3);transform:translateY(-2px)}
-.chip__head{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
-.chip__oo{color:var(--ink);width:32px;opacity:.85}
-.chip__sale{background:var(--maroon);color:var(--off);font-family:var(--f-mono);font-size:8.5px;letter-spacing:.1em;padding:3px 8px;text-transform:uppercase;font-weight:700}
-.chip__n{font-family:var(--f-display);font-size:clamp(15px,1.3vw,20px);text-transform:uppercase;line-height:1;letter-spacing:.005em}
-.chip__c{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.1em;color:var(--mute-l);text-transform:lowercase}
+.chip__body{padding:18px 10px 16px 16px;display:flex;flex-direction:column;gap:10px;justify-content:space-between;min-width:0}
+.chip__head{display:flex;align-items:flex-start;justify-content:space-between;gap:6px;flex-wrap:wrap}
+.chip__oo{color:var(--ink);width:30px;opacity:.85}
+.chip__sale{background:var(--maroon);color:var(--off);font-family:var(--f-mono);font-size:7.5px;letter-spacing:.08em;padding:3px 6px;text-transform:uppercase;font-weight:700;white-space:nowrap}
+.chip__n{font-family:var(--f-display);font-size:clamp(13px,1.05vw,17px);text-transform:uppercase;line-height:1;letter-spacing:.005em}
+.chip__c{font-family:var(--f-mono);font-size:9px;letter-spacing:.08em;color:var(--mute-l);text-transform:lowercase}
+.chip__thumb{background-size:cover;background-position:center;background-repeat:no-repeat;background-color:var(--off-2);transition:transform .35s var(--cut)}
+.chip:hover .chip__thumb{transform:scale(1.06)}
 
 /* --- PRICE BANDS (standardized OO glyph) ------------------ */
 .price{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(8px,1vw,14px)}
@@ -257,14 +260,21 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .bash__title{font-size:clamp(38px,5vw,72px);line-height:1;margin-bottom:16px}
 .bash__title em{font-style:normal;color:var(--yellow)}
 .bash__sub{font-size:15px;color:rgba(247,244,237,.72);max-width:44ch;margin-bottom:24px;line-height:1.6}
-.bash__deals{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
-.bash__deal{background:rgba(247,244,237,.05);border:1px solid rgba(247,244,237,.1);padding:16px;transition:border-color .2s,background .2s;position:relative}
-.bash__deal:hover{border-color:var(--yellow);background:rgba(255,212,59,.06)}
-.bash__deal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-.bash__deal-tag{font-family:var(--f-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--yellow);font-weight:700}
-.bash__deal .oo{color:var(--yellow);width:26px;opacity:.6}
-.bash__deal-val{font-family:var(--f-display);font-size:clamp(22px,2.5vw,32px);text-transform:uppercase;line-height:1.02}
-.bash__deal-on{font-family:var(--f-mono);font-size:9px;letter-spacing:.1em;color:rgba(247,244,237,.5);margin-top:4px;text-transform:uppercase}
+.bash__deals{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:26px}
+.bash__deal{position:relative;padding:18px 18px 16px;overflow:hidden;text-decoration:none;transition:transform .25s var(--cut),box-shadow .25s}
+.bash__deal:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.25)}
+.bash__deal:nth-child(1){background:var(--yellow);color:var(--ink)}
+.bash__deal:nth-child(2){background:var(--maroon);color:var(--off)}
+.bash__deal:nth-child(3){background:var(--off);color:var(--ink)}
+.bash__deal:nth-child(4){background:var(--ink-3);color:var(--off);border:1px solid rgba(255,212,59,.35)}
+.bash__deal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.bash__deal-tag{font-family:var(--f-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;opacity:.85}
+.bash__deal .oo{color:currentColor;width:26px;opacity:.55}
+.bash__deal-val{font-family:var(--f-display);font-size:clamp(26px,3vw,42px);text-transform:uppercase;line-height:.96;letter-spacing:.005em}
+.bash__deal-on{font-family:var(--f-mono);font-size:9px;letter-spacing:.11em;opacity:.7;margin-top:4px;text-transform:uppercase}
+.bash__deal-cta{display:inline-flex;align-items:center;gap:6px;font-family:var(--f-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-top:14px;padding-top:12px;border-top:1px solid currentColor;width:100%;justify-content:space-between}
+.bash__deal-cta svg{width:14px;height:14px;fill:currentColor;transition:transform .2s var(--cut)}
+.bash__deal:hover .bash__deal-cta svg{transform:translateX(4px)}
 .bash__visual{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:relative}
 .bash__img{aspect-ratio:3/4;background-size:cover;background-position:center 30%;position:relative;overflow:hidden}
 .bash__img:first-child{grid-row:span 2;aspect-ratio:auto;background-position:center 40%}
@@ -333,7 +343,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 /* --- BRAND STORY ------------------------------------------- */
 .story{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(30px,3.5vw,60px);align-items:center}
 .story__imgs{display:grid;grid-template-columns:1.15fr 1fr;gap:10px}
-.story__a{aspect-ratio:3/4;background:url('images/fashion-models-wearing-graphic-t-202607241500.jpg') center 25%/cover;position:relative;overflow:hidden}
+.story__a{aspect-ratio:3/4;background:url('images/bts-tshirt-wall.jpg') center/cover;position:relative;overflow:hidden}
 .story__a::after{content:"";position:absolute;top:14px;left:14px;width:36px;height:18px;background:var(--yellow);opacity:.95;-webkit-mask:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'%3E%3Cpath fill='black' fill-rule='evenodd' d='M50 4 A46 46 0 1 1 50 96 A46 46 0 1 1 50 4 Z M50 29 A21 21 0 1 0 50 71 A21 21 0 1 0 50 29 Z M150 4 A46 46 0 1 1 150 96 A46 46 0 1 1 150 4 Z M150 29 A21 21 0 1 0 150 71 A21 21 0 1 0 150 29 Z'/%3E%3Crect x='2' y='38' width='196' height='24' rx='12' fill='black'/%3E%3C/svg%3E") no-repeat center/contain;mask:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'%3E%3Cpath fill='black' fill-rule='evenodd' d='M50 4 A46 46 0 1 1 50 96 A46 46 0 1 1 50 4 Z M50 29 A21 21 0 1 0 50 71 A21 21 0 1 0 50 29 Z M150 4 A46 46 0 1 1 150 96 A46 46 0 1 1 150 4 Z M150 29 A21 21 0 1 0 150 71 A21 21 0 1 0 150 29 Z'/%3E%3Crect x='2' y='38' width='196' height='24' rx='12' fill='black'/%3E%3C/svg%3E") no-repeat center/contain}
 .story__b{display:grid;gap:10px;grid-template-rows:1fr 1fr}
 .story__b>div{background-size:cover;background-position:center;position:relative;overflow:hidden}
@@ -563,45 +573,63 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
   <div class="wrap">
     <div class="chips">
       <a class="chip rv" href="#">
-        <div class="chip__head">
-          <svg class="oo chip__oo"><use href="#oo"/></svg>
-          <span class="chip__sale">40% Off</span>
+        <div class="chip__body">
+          <div class="chip__head">
+            <svg class="oo chip__oo"><use href="#oo"/></svg>
+            <span class="chip__sale">40% Off</span>
+          </div>
+          <div><div class="chip__n">Oversized<br>Tees</div><div class="chip__c">1,240 styles</div></div>
         </div>
-        <div><div class="chip__n">Oversized<br>Tees</div><div class="chip__c">1,240 styles</div></div>
+        <div class="chip__thumb" style="background-image:url('images/chip-oversized-tee.jpg')"></div>
       </a>
       <a class="chip rv" href="#">
-        <div class="chip__head">
-          <svg class="oo chip__oo"><use href="#oo"/></svg>
-          <span class="chip__sale">50% Off</span>
+        <div class="chip__body">
+          <div class="chip__head">
+            <svg class="oo chip__oo"><use href="#oo"/></svg>
+            <span class="chip__sale">50% Off</span>
+          </div>
+          <div><div class="chip__n">Printed<br>T-Shirts</div><div class="chip__c">960 styles</div></div>
         </div>
-        <div><div class="chip__n">Printed<br>T-Shirts</div><div class="chip__c">960 styles</div></div>
+        <div class="chip__thumb" style="background-image:url('images/chip-printed-tee.jpg')"></div>
       </a>
       <a class="chip rv" href="#">
-        <div class="chip__head">
-          <svg class="oo chip__oo"><use href="#oo"/></svg>
-          <span class="chip__sale">60% Off</span>
+        <div class="chip__body">
+          <div class="chip__head">
+            <svg class="oo chip__oo"><use href="#oo"/></svg>
+            <span class="chip__sale">60% Off</span>
+          </div>
+          <div><div class="chip__n">Hoodies</div><div class="chip__c">420 styles</div></div>
         </div>
-        <div><div class="chip__n">Hoodies</div><div class="chip__c">420 styles</div></div>
+        <div class="chip__thumb" style="background-image:url('images/chip-hoodie.jpg')"></div>
       </a>
       <a class="chip rv" href="#">
-        <div class="chip__head">
-          <svg class="oo chip__oo"><use href="#oo"/></svg>
-          <span class="chip__sale">40% Off</span>
+        <div class="chip__body">
+          <div class="chip__head">
+            <svg class="oo chip__oo"><use href="#oo"/></svg>
+            <span class="chip__sale">40% Off</span>
+          </div>
+          <div><div class="chip__n">Joggers &amp;<br>Denim</div><div class="chip__c">680 styles</div></div>
         </div>
-        <div><div class="chip__n">Joggers &amp;<br>Denim</div><div class="chip__c">680 styles</div></div>
+        <div class="chip__thumb" style="background-image:url('images/chip-denim.jpg')"></div>
       </a>
       <a class="chip rv" href="#">
-        <div class="chip__head">
-          <svg class="oo chip__oo"><use href="#oo"/></svg>
+        <div class="chip__body">
+          <div class="chip__head">
+            <svg class="oo chip__oo"><use href="#oo"/></svg>
+          </div>
+          <div><div class="chip__n">Backpacks</div><div class="chip__c">140 styles</div></div>
         </div>
-        <div><div class="chip__n">Backpacks</div><div class="chip__c">140 styles</div></div>
+        <div class="chip__thumb" style="background-image:url('images/chip-backpack.jpg')"></div>
       </a>
       <a class="chip rv" href="#">
-        <div class="chip__head">
-          <svg class="oo chip__oo"><use href="#oo"/></svg>
-          <span class="chip__sale">Buy 2 @ 999</span>
+        <div class="chip__body">
+          <div class="chip__head">
+            <svg class="oo chip__oo"><use href="#oo"/></svg>
+            <span class="chip__sale">Buy 2 @ 999</span>
+          </div>
+          <div><div class="chip__n">Licensed<br>Tees</div><div class="chip__c">800 styles</div></div>
         </div>
-        <div><div class="chip__n">Licensed<br>Tees</div><div class="chip__c">800 styles</div></div>
+        <div class="chip__thumb" style="background-image:url('images/chip-licensed-tee.jpg')"></div>
       </a>
     </div>
   </div>
@@ -622,26 +650,30 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
         <a href="#" class="cta cta--ghost">Exclusive on App</a>
       </div>
       <div class="bash__deals rv">
-        <div class="bash__deal">
+        <a href="#" class="bash__deal">
           <div class="bash__deal-head"><div class="bash__deal-tag">Topwear</div><svg class="oo"><use href="#oo"/></svg></div>
-          <div class="bash__deal-val">Upto 60% Off</div>
+          <div class="bash__deal-val">Upto<br>60% Off</div>
           <div class="bash__deal-on">On 2,000+ Styles</div>
-        </div>
-        <div class="bash__deal">
+          <div class="bash__deal-cta">Shop Topwear <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </a>
+        <a href="#" class="bash__deal">
           <div class="bash__deal-head"><div class="bash__deal-tag">Bottomwear</div><svg class="oo"><use href="#oo"/></svg></div>
-          <div class="bash__deal-val">Upto 50% Off</div>
+          <div class="bash__deal-val">Upto<br>50% Off</div>
           <div class="bash__deal-on">Joggers, Denim &amp; More</div>
-        </div>
-        <div class="bash__deal">
+          <div class="bash__deal-cta">Shop Bottomwear <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </a>
+        <a href="#" class="bash__deal">
           <div class="bash__deal-head"><div class="bash__deal-tag">Winterwear</div><svg class="oo"><use href="#oo"/></svg></div>
-          <div class="bash__deal-val">Flat 40% Off</div>
+          <div class="bash__deal-val">Flat<br>40% Off</div>
           <div class="bash__deal-on">Hoodies &amp; Jackets</div>
-        </div>
-        <div class="bash__deal">
+          <div class="bash__deal-cta">Shop Winterwear <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </a>
+        <a href="#" class="bash__deal">
           <div class="bash__deal-head"><div class="bash__deal-tag">Accessories</div><svg class="oo"><use href="#oo"/></svg></div>
-          <div class="bash__deal-val">Buy 2 Get 1</div>
+          <div class="bash__deal-val">Buy 2<br>Get 1</div>
           <div class="bash__deal-on">Bags, Caps &amp; More</div>
-        </div>
+          <div class="bash__deal-cta">Shop Accessories <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        </a>
       </div>
     </div>
     <div class="bash__visual rv">
@@ -713,13 +745,13 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
     </div>
     <div class="pgrid">
       <a class="card rv" href="#">
-        <div class="card__i" style="background-image:url('images/indian-male-model-wearing-red-202607241831.jpg');background-position:center 22%">
+        <div class="card__i" style="background-image:url('images/bestseller-red-superhero-tee.jpg');background-position:center 20%">
           <span class="card__t card__t--y">#1</span>
           <svg class="oo card__oo"><use href="#oo"/></svg>
           <span class="card__w">&#9825;</span>
         </div>
         <div class="card__b">
-          <div class="card__n">Captain America Oversized Tee</div>
+          <div class="card__n">Heroic Vintage Comics Tee — Red</div>
           <div class="card__s">240 GSM · Oversized</div>
           <div class="card__p">&#8377;899 <del>&#8377;1,499</del> <span class="card__off">40% Off</span></div>
           <div class="card__r"><b>4.8</b> &#9733; · 2,318</div>
@@ -870,7 +902,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 <section class="sec sec--tight">
   <div class="wrap split">
     <a class="sb rv" href="#">
-      <div class="sb__bg" style="background-image:url('images/indian-male-fashion-casting-port-202607242037.jpg')"></div>
+      <div class="sb__bg" style="background-image:url('images/split-men-lifestyle.jpg');background-position:center"></div>
       <div class="sb__sc"></div>
       <svg class="oo sb__oo"><use href="#oo"/></svg>
       <div class="sb__in">
@@ -880,7 +912,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
       </div>
     </a>
     <a class="sb rv" href="#">
-      <div class="sb__bg" style="background-image:url('images/indian-female-fashion-casting-po-202607242026.jpg')"></div>
+      <div class="sb__bg" style="background-image:url('images/split-women-lifestyle.jpg');background-position:center"></div>
       <div class="sb__sc"></div>
       <svg class="oo sb__oo"><use href="#oo"/></svg>
       <div class="sb__in">
@@ -925,11 +957,11 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
       </a>
       <a class="card rv" href="#">
         <div class="card__i" style="background-image:url('images/models-wearing-graphic-t-shirts-202607241843.jpg');background-position:center 15%"><span class="card__t card__t--m">Low Stock</span><svg class="oo card__oo"><use href="#oo"/></svg><span class="card__w">&#9825;</span></div>
-        <div class="card__b"><div class="card__n">Graphic Duo Tee Pack</div><div class="card__s">240 GSM · Pack of 2</div><div class="card__p">&#8377;1,499 <del>&#8377;2,798</del> <span class="card__off">46% Off</span></div><div class="card__r"><b>4.8</b> &#9733; · 640</div></div>
+        <div class="card__b"><div class="card__n">Graphic Trio Tee Pack</div><div class="card__s">240 GSM · Pack of 3</div><div class="card__p">&#8377;1,499 <del>&#8377;2,997</del> <span class="card__off">50% Off</span></div><div class="card__r"><b>4.8</b> &#9733; · 640</div></div>
       </a>
       <a class="card rv" href="#">
         <div class="card__i" style="background-image:url('images/indian-model-wearing-red-t-shirt-202607241756.jpg');background-position:center 20%"><svg class="oo card__oo"><use href="#oo"/></svg><span class="card__w">&#9825;</span></div>
-        <div class="card__b"><div class="card__n">Statement Tee — Maroon</div><div class="card__s">240 GSM · Relaxed</div><div class="card__p">&#8377;799 <del>&#8377;1,499</del> <span class="card__off">47% Off</span></div><div class="card__r"><b>4.5</b> &#9733; · 388</div></div>
+        <div class="card__b"><div class="card__n">Statement Graphic Tee — Red</div><div class="card__s">240 GSM · Relaxed</div><div class="card__p">&#8377;799 <del>&#8377;1,499</del> <span class="card__off">47% Off</span></div><div class="card__r"><b>4.5</b> &#9733; · 388</div></div>
       </a>
       <a class="card rv" href="#">
         <div class="card__i" style="background-image:url('images/models-wearing-superhero-t-shirts-2k-202607242257-1.jpg');background-position:center 15%"><span class="card__t">Limited</span><svg class="oo card__oo"><use href="#oo"/></svg><span class="card__w">&#9825;</span></div>
@@ -937,7 +969,7 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
       </a>
       <a class="card rv" href="#">
         <div class="card__i" style="background-image:url('images/shirt-presented-by-gloved-hands-202607242107.jpg')"><svg class="oo card__oo"><use href="#oo"/></svg><span class="card__w">&#9825;</span></div>
-        <div class="card__b"><div class="card__n">Premium Overshirt — Bone</div><div class="card__s">Cotton Twill · Boxy</div><div class="card__p">&#8377;1,299 <del>&#8377;2,199</del> <span class="card__off">41% Off</span></div><div class="card__r"><b>4.4</b> &#9733; · 220</div></div>
+        <div class="card__b"><div class="card__n">Premium Cotton Shirt — Sky Blue</div><div class="card__s">Cotton Twill · Regular</div><div class="card__p">&#8377;1,299 <del>&#8377;2,199</del> <span class="card__off">41% Off</span></div><div class="card__r"><b>4.4</b> &#9733; · 220</div></div>
       </a>
     </div>
   </div>
@@ -947,13 +979,15 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 <section class="sec sec--ink">
   <div class="wrap story">
     <div class="story__imgs rv">
-      <div class="story__a"></div>
+      <div class="story__a">
+        <div class="story__label" style="bottom:12px;left:12px">The Gallery</div>
+      </div>
       <div class="story__b">
-        <div style="background-image:url('images/yellow-woven-label-stitched-on-202607250110.jpg');background-position:center">
-          <div class="story__label">The Label</div>
+        <div style="background-image:url('images/bts-screen-printing.jpg');background-position:center">
+          <div class="story__label">The Print Floor</div>
         </div>
-        <div style="background-image:url('images/shirt-presented-by-gloved-hands-202607242107.jpg');background-position:center 30%">
-          <div class="story__label">The Archive</div>
+        <div style="background-image:url('images/bts-photoshoot.jpg');background-position:center">
+          <div class="story__label">The Shoot</div>
         </div>
       </div>
     </div>
